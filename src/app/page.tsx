@@ -1,3 +1,12 @@
+// import os from "os"; // 노드 APIs
+import Counter from "@/components/Counter";
+
 export default function Home() {
-  return <h1>홈페이지다</h1>;
+  console.log("안녕! - 서버");
+  return (
+    <>
+      <h1>홈페이지다</h1>
+      <Counter />
+    </>
+  );
 }
