@@ -5,6 +5,7 @@ export type Product = {
   id: string;
   name: string;
   price: number;
+  image: string;
 };
 
 // 요청할 때 데이터를 가져오는 것이기 때문에 async를 사용한다.

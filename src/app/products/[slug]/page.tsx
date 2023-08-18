@@ -1,5 +1,6 @@
 import NotFound from "@/app/not-found";
 import { getProduct, getProducts } from "@/service/products";
+import Image from "next/image";
 
 export const revalidate = 3;
 
@@ -21,7 +22,17 @@ export default async function ProductsPage({ params: { slug } }: Props) {
   if (!product) {
     NotFound();
   }
-  return <h1>{product?.name} Page</h1>;
+  return (
+    <>
+      <Image
+        src={`/images/${product?.image}`}
+        alt={`${product?.name}`}
+        width="400"
+        height="400"
+      />
+      <h1>{product?.name} Page</h1>
+    </>
+  );
 }
 
 export async function generateStaticParams() {
